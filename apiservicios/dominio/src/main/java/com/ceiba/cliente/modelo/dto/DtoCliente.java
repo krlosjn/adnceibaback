@@ -1,6 +1,5 @@
 package com.ceiba.cliente.modelo.dto;
 
-import com.ceiba.cliente.modelo.entidad.Identificacion;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -10,5 +9,6 @@ import lombok.Getter;
 public class DtoCliente {
     private Long id;
     private String nombre;
-    private Identificacion identificacion;
+    private String tipoIdentificacion;
+    private String numeroIdentificacion;
 }
