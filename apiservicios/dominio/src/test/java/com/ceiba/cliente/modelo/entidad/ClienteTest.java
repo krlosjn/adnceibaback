@@ -1,10 +1,10 @@
-package com.ceiba.pago.modelo.entidad.cliente;
+package com.ceiba.cliente.modelo.entidad;
 
 import com.ceiba.BasePrueba;
+import com.ceiba.cliente.servicio.testdatabuilder.ClienteTestDataBuilder;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudMaxima;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
-import com.ceiba.pago.servicio.testdatabuilder.ClienteTestDataBuilder;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

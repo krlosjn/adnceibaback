@@ -1,6 +1,6 @@
 package com.ceiba.pago.servicio;
 
-import com.ceiba.pago.modelo.entidad.pago.Pago;
+import com.ceiba.pago.modelo.entidad.Pago;
 import com.ceiba.pago.puerto.repositorio.RepositorioPago;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 

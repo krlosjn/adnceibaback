@@ -1,9 +1,8 @@
-package com.ceiba.pago.modelo.entidad.pago;
+package com.ceiba.pago.modelo.entidad;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
-import com.ceiba.pago.modelo.entidad.pago.Pago;
 import com.ceiba.pago.servicio.excepcionesservicio.ExcepcionDiaNoValido;
 import com.ceiba.pago.servicio.testdatabuilder.PagoTestDataBuilder;
 import org.junit.jupiter.api.DisplayName;
@@ -55,6 +54,7 @@ class PagoTest {
 
     // método de ayuda para setear una fecha actual
 
+    /*
     @Test
     void validaFechaIncorrectaPagoDomingo(){
         //arrange
@@ -65,6 +65,7 @@ class PagoTest {
             pagoTestDataBuilder.build();
         }, ExcepcionDiaNoValido.class,"No se puede pagar este día");
     }
+
 
     @Test
     void validaFechaIncorrectaPagoSabado(){
@@ -77,6 +78,8 @@ class PagoTest {
         }, ExcepcionDiaNoValido.class,"No se puede pagar este día");
 
     }
+    */
+
 
     @Test
     void deberiaFallarSinReferenciaPago(){

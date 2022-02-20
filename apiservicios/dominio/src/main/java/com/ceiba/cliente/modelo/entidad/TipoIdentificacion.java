@@ -1,4 +1,4 @@
-package com.ceiba.pago.modelo.entidad.cliente;
+package com.ceiba.cliente.modelo.entidad;
 
 public enum TipoIdentificacion {
 

@@ -1,10 +1,9 @@
 package com.ceiba.pago.servicio.testdatabuilder;
 
-
-import com.ceiba.pago.modelo.entidad.cliente.Cliente;
-import com.ceiba.pago.modelo.entidad.cliente.Identificacion;
-import com.ceiba.pago.modelo.entidad.cliente.TipoIdentificacion;
-import com.ceiba.pago.modelo.entidad.pago.Pago;
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.modelo.entidad.Identificacion;
+import com.ceiba.cliente.modelo.entidad.TipoIdentificacion;
+import com.ceiba.pago.modelo.entidad.Pago;
 import com.ceiba.pago.servicio.excepcionesservicio.ExcepcionDiaNoValido;
 
 import java.time.DayOfWeek;

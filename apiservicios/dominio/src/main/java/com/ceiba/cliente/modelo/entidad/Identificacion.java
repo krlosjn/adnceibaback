@@ -1,4 +1,4 @@
-package com.ceiba.pago.modelo.entidad.cliente;
+package com.ceiba.cliente.modelo.entidad;
 
 import lombok.Getter;
 
@@ -12,7 +12,7 @@ public class Identificacion {
     private TipoIdentificacion tipoIdentificacion;
     private String numeroIdentificacion;
 
-    public Identificacion(TipoIdentificacion tipoIdentificacion,String numeroIdentificacion){
+    public Identificacion(TipoIdentificacion tipoIdentificacion, String numeroIdentificacion){
         validarObligatorio(tipoIdentificacion,EL_TIPO_DE_IDENTIFICACION_NO_PUEDE_SER_NULO);
         validarObligatorio(numeroIdentificacion, EL_NUMERO_NO_PUEDER_ESTAR_VACIO);
         this.tipoIdentificacion=tipoIdentificacion;

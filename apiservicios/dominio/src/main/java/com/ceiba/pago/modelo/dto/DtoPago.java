@@ -1,5 +1,6 @@
 package com.ceiba.pago.modelo.dto;
 
+import com.ceiba.cliente.modelo.entidad.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 public class DtoPago {
     private Long id;
     private String referenciaPago;
+    private Long idCliente;
     private String aplicaDescuento;
     private double valorBase;
     private double valorTotal;

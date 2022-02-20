@@ -2,7 +2,7 @@ package com.ceiba.pago.comando.manejador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.pago.modelo.entidad.pago.Pago;
+import com.ceiba.pago.modelo.entidad.Pago;
 import com.ceiba.pago.servicio.ServicioCrearPago;
 import org.springframework.stereotype.Component;
 

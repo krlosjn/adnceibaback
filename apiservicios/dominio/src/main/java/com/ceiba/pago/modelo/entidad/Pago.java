@@ -1,6 +1,6 @@
-package com.ceiba.pago.modelo.entidad.pago;
+package com.ceiba.pago.modelo.entidad;
+import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
-import com.ceiba.pago.modelo.entidad.cliente.Cliente;
 import com.ceiba.pago.servicio.excepcionesservicio.ExcepcionDiaNoValido;
 import lombok.Getter;
 import java.time.DayOfWeek;

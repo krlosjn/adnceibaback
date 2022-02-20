@@ -1,6 +1,7 @@
-package com.ceiba.pago.modelo.entidad.cliente;
+package com.ceiba.cliente.modelo.entidad;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import static com.ceiba.dominio.ValidadorArgumento.*;
 
@@ -14,11 +15,12 @@ public class Cliente {
     public static final String NOMBRE_MAXIMO="El nombre sólo puede contener 30 caracteres máximo";
 
 
+    @Setter
     private Long id;
     private String nombre;
     private Identificacion identificacion;
 
-    public Cliente(Long id, String nombre,Identificacion identificacion){
+    public Cliente(Long id, String nombre, Identificacion identificacion){
         validarObligatorio(nombre, EL_NOMBRE_NO_PUEDE_SER_UN_CAMPO_VACIO);
         validarLongitudMaxima(nombre,30,NOMBRE_MAXIMO);
         validarObligatorio(identificacion, TIENE_QUE_INGRESAR_LA_IDENTIFICACION_DEL_CLIENTE);

@@ -1,7 +1,7 @@
-package com.ceiba.pago.servicio.testdatabuilder;
-import com.ceiba.pago.modelo.entidad.cliente.Cliente;
-import com.ceiba.pago.modelo.entidad.cliente.Identificacion;
-import com.ceiba.pago.modelo.entidad.cliente.TipoIdentificacion;
+package com.ceiba.cliente.servicio.testdatabuilder;
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.modelo.entidad.Identificacion;
+import com.ceiba.cliente.modelo.entidad.TipoIdentificacion;
 
 public class ClienteTestDataBuilder {
 

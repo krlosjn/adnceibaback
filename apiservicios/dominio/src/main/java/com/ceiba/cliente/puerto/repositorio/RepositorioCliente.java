@@ -1,6 +1,7 @@
-package com.ceiba.pago.puerto.repositorio;
+package com.ceiba.cliente.puerto.repositorio;
 
-import com.ceiba.pago.modelo.entidad.Pago;
+import com.ceiba.cliente.modelo.entidad.Cliente;
+
 
 /**
  * Interfaz que se sirve como un asbtracción de acceso a datos
@@ -9,19 +10,19 @@ import com.ceiba.pago.modelo.entidad.Pago;
  * **/
 
 
-public interface RepositorioPago {
+public interface RepositorioCliente {
     /**
      * Permite crear  un pago de un servicio
      * @param pago
      * @return el id generado
      */
-    Long crear(Pago pago);
+    Long crear(Cliente pago);
 
     /**
      * Permite actualizar un pago que se encuentre en el sistema
      * @param usuario
      */
-    void actualizar(Pago usuario);
+    void actualizar(Cliente usuario);
 
     /**
      * Permite eliminar un pago
