@@ -2,8 +2,6 @@ package com.ceiba.pago.servicio.testdatabuilder;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.pago.comando.ComandoPago;
-
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
