@@ -1,8 +1,6 @@
 package com.ceiba.pago.servicio.testdatabuilder;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.cliente.modelo.entidad.Identificacion;
-import com.ceiba.cliente.modelo.entidad.TipoIdentificacion;
 import com.ceiba.pago.comando.ComandoPago;
 
 
@@ -24,7 +22,7 @@ public class ComandoPagoTestDataBuilder {
     public ComandoPagoTestDataBuilder() {
         this.id=2L;
         this.referenciaPago="1111";
-        this.cliente= new Cliente(1l,"Carlos",new Identificacion(TipoIdentificacion.CEDULA,"1152205388"));
+        this.cliente= new Cliente(1l,"Carlos","CC","1152205388");
         this.aplicaDescuento=true;
         this.valorBase=200000;
         this.fechaRegistro = LocalDate.now();

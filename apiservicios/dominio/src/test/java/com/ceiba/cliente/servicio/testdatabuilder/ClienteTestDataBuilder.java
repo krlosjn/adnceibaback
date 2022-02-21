@@ -1,18 +1,18 @@
 package com.ceiba.cliente.servicio.testdatabuilder;
 import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.cliente.modelo.entidad.Identificacion;
-import com.ceiba.cliente.modelo.entidad.TipoIdentificacion;
 
 public class ClienteTestDataBuilder {
 
     private Long id;
     private String nombre;
-    private Identificacion identificacion;
+    private String tipoIdentificacion;
+    private String numeroIdentificacion;
 
     public ClienteTestDataBuilder(){
         this.id=1L;
         this.nombre="Carlos";
-        this.identificacion= new Identificacion(TipoIdentificacion.CEDULA,"1152205388");
+        this.tipoIdentificacion="CC";
+        this.numeroIdentificacion="1152205388";
     }
 
     public ClienteTestDataBuilder conId(Long id){
@@ -25,12 +25,20 @@ public class ClienteTestDataBuilder {
         return this;
     }
 
-    public ClienteTestDataBuilder conIdentificacion(Identificacion identificacion){
-        this.identificacion=identificacion;
+
+    public ClienteTestDataBuilder conTipoIdentificacion(String tipoIdentificacion){
+        this.tipoIdentificacion=tipoIdentificacion;
         return this;
     }
 
+
+    public ClienteTestDataBuilder conNumeroIdentificacion(String numeroIdentificacion){
+        this.numeroIdentificacion=numeroIdentificacion;
+        return this;
+    }
+
+
     public Cliente build(){
-        return new Cliente(id,nombre,identificacion);
+        return new Cliente(id,nombre,tipoIdentificacion,numeroIdentificacion);
     }
 }

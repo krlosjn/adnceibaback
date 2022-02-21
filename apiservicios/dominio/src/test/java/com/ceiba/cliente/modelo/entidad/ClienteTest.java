@@ -23,9 +23,8 @@ public class ClienteTest {
     @Test
     public void deberiaCrearUsuarioNuevo(){
     //arrange
-        Cliente clienteUno = new ClienteTestDataBuilder().conIdentificacion(new Identificacion(TipoIdentificacion.CEDULA,"1152205388")).build();
-        Cliente clienteDos= new ClienteTestDataBuilder().conNombre("Carlos").
-                conIdentificacion(new Identificacion(TipoIdentificacion.CEDULA,"1152205388")).build();
+        Cliente clienteUno = new ClienteTestDataBuilder().conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
+        Cliente clienteDos= new ClienteTestDataBuilder().conNombre("Carlos").conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
         //act-assert
         assertEquals("Carlos",clienteDos.getNombre());
         assertTrue(clienteUno.validaNumeroIdentificacionCliente(clienteDos));
@@ -67,30 +66,43 @@ public class ClienteTest {
     }
 
     @Test
-    void validaIdentificacionIgual(){
+    void validaTipoIdentificacionIgual(){
         //Arrange
-        Cliente clienteUno = new ClienteTestDataBuilder().conIdentificacion(new Identificacion(TipoIdentificacion.CEDULA,"1152205388")).build();
-        Cliente clienteDos = new ClienteTestDataBuilder().conIdentificacion(new Identificacion(TipoIdentificacion.CEDULA,"1152205388")).build();
+        Cliente clienteUno = new ClienteTestDataBuilder().conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
+        Cliente clienteDos= new ClienteTestDataBuilder().conNombre("Carlos").conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
         // act
-        boolean result=clienteUno.validaIdentificacionIgual(clienteDos);
+        boolean result=clienteUno.validaTipoIdentificacionCliente(clienteDos);
         //assert
         assertTrue(result);
     }
 
     @Test
-    void deberiaFallarSinIdentificacion(){
+    void validaNumeroIdentificacionIgual(){
+
         //arrange
-        ClienteTestDataBuilder clienteTestDataBuilder= new ClienteTestDataBuilder().conIdentificacion(null);
+        Cliente clienteUno = new ClienteTestDataBuilder().conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
+        Cliente clienteDos= new ClienteTestDataBuilder().conNombre("Carlos").conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
+        //act
+        boolean result = clienteUno.validaNumeroIdentificacionCliente(clienteDos);
+        //assert
+        assertTrue(result);
+    }
+
+
+    @Test
+    void deberiaFallarSinTipoIdentificacion(){
+        //arrange
+        ClienteTestDataBuilder clienteTestDataBuilder= new ClienteTestDataBuilder().conTipoIdentificacion(null);
         //act-assert
         BasePrueba.assertThrows(()->{
             clienteTestDataBuilder.build();
-        },ExcepcionValorObligatorio.class,"Tiene que ingresar la identificación  del cliente");
+        },ExcepcionValorObligatorio.class,"Tiene que ingresar tipo de documento");
     }
 
     @Test
     void debeFallarConNumeroCedulaMayorDiez(){
         //arrange
-            ClienteTestDataBuilder clienteTestDataBuilder= new ClienteTestDataBuilder().conIdentificacion(new Identificacion(TipoIdentificacion.CEDULA,"11111111111"));
+            ClienteTestDataBuilder clienteTestDataBuilder= new ClienteTestDataBuilder().conNumeroIdentificacion("11111111111");
         //act-assert
         BasePrueba.assertThrows(()->{
             clienteTestDataBuilder.build();
@@ -100,7 +112,7 @@ public class ClienteTest {
     @Test
     void debeFallarConNumeroCedulaMenorDiez(){
         //arrange
-        ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conIdentificacion(new Identificacion(TipoIdentificacion.CEDULA,"111111111"));
+        ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conNumeroIdentificacion("111111111");
         //act-assert
         BasePrueba.assertThrows(()->{
             clienteTestDataBuilder.build();

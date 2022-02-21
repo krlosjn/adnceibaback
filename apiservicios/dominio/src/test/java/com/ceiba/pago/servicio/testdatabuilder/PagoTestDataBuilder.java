@@ -1,8 +1,6 @@
 package com.ceiba.pago.servicio.testdatabuilder;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.cliente.modelo.entidad.Identificacion;
-import com.ceiba.cliente.modelo.entidad.TipoIdentificacion;
 import com.ceiba.pago.modelo.entidad.Pago;
 import com.ceiba.pago.servicio.excepcionesservicio.ExcepcionDiaNoValido;
 
@@ -29,7 +27,7 @@ public class PagoTestDataBuilder {
     public PagoTestDataBuilder() {
         this.id=1L;
         this.referenciaPago ="0000";
-        this.cliente=new Cliente(1l,"Carlos",new Identificacion(TipoIdentificacion.CEDULA,"1152205388"));
+        this.cliente=new Cliente(1l,"Carlos","CC","1152205388");
         this.fechaRegistro= LocalDate.now();
         this.aplicaDescuento=true;
         this.valorBase=1000000;

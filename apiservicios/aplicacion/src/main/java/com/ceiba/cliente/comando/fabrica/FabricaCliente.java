@@ -12,7 +12,8 @@ public class FabricaCliente {
         return new Cliente(
                 comandoCliente.getId(),
                 comandoCliente.getNombre(),
-                comandoCliente.getIdentificacion()
+                comandoCliente.getTipoIdentificacion(),
+                comandoCliente.getNumeroIdentificacion()
                 );
     }
 }

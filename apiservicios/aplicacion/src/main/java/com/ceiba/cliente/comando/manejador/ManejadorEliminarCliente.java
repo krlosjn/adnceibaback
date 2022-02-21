@@ -13,8 +13,8 @@ public class ManejadorEliminarCliente implements ManejadorComando<Long> {
     public ManejadorEliminarCliente(ServicioEliminarCliente servicioEliminarCliente) {
         this.servicioEliminarCliente = servicioEliminarCliente;
     }
-    public void ejecutar(Long idCliente) {
-        this.servicioEliminarCliente.ejecutar(idCliente);
+    public void ejecutar(Long id) {
+        this.servicioEliminarCliente.ejecutar(id);
     }
 
 }
