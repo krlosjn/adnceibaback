@@ -2,7 +2,6 @@ package com.ceiba.cliente.comando.fabrica;
 
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.pago.modelo.entidad.Pago;
 import org.springframework.stereotype.Component;
 
 @Component

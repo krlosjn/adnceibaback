@@ -1,6 +1,5 @@
 package com.ceiba.pago.modelo.dto;
 
-import com.ceiba.cliente.modelo.entidad.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

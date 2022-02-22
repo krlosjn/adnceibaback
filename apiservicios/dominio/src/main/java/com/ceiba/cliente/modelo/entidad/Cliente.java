@@ -34,24 +34,17 @@ public class Cliente {
     }
 
     public boolean validaNumeroIdentificacionCliente(Cliente cliente){
-        if(this.numeroIdentificacion==cliente.numeroIdentificacion){
-            return true;
-        }
-        return false;
+
+        return this.numeroIdentificacion.equals(cliente.numeroIdentificacion);
+
     }
 
     public boolean validaTipoIdentificacionCliente(Cliente cliente){
-        if(this.tipoIdentificacion==cliente.tipoIdentificacion){
-            return true;
-        }
-        return false;
+        return this.tipoIdentificacion.equals(cliente.tipoIdentificacion);
     }
 
     public boolean validaNombreClienteIgual(Cliente cliente){
-        if(this.nombre==cliente.getNombre()){
-            return true;
-        }
-        return false;
+        return this.nombre.equals(cliente.getNombre());
     }
 
 }

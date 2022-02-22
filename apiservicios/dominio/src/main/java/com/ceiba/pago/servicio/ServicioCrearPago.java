@@ -12,7 +12,6 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 public class ServicioCrearPago {
 
     public static final String EL_PAGO_YA_SE_ENCUENTRA_EN_EL_SISTEMA = "El pago ya se encuentra en el sistema";
-    private static final String DIA_NO_VALIDO="No se puede pagar este día";
 
 
     private final RepositorioPago repositorioPago;

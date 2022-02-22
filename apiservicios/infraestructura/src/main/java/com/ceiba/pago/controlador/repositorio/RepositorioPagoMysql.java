@@ -35,6 +35,7 @@ public class RepositorioPagoMysql implements RepositorioPago {
 
         String sql  = sqlCrear;
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+
         parameterSource.addValue("referenciaPago",pago.getReferenciaPago());
         parameterSource.addValue("idCliente",pago.getCliente().getId());
         parameterSource.addValue("aplicaDescuento",pago.isAplicaDescuento());
@@ -44,8 +45,8 @@ public class RepositorioPagoMysql implements RepositorioPago {
         parameterSource.addValue("fechaProximoPago",pago.getFechaProximoPago());
 
         KeyHolder keyHolder= new GeneratedKeyHolder();
-
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sql,parameterSource,keyHolder,new String[] {"id"});
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .update(sql,parameterSource,keyHolder,new String[] {"id"});
 
         return  keyHolder.getKey().longValue();
 
