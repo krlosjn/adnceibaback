@@ -1,6 +1,7 @@
 package com.ceiba.pago.controlador;
 
 import com.ceiba.ApplicationMock;
+import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.pago.comando.ComandoPago;
 import com.ceiba.pago.servicio.testdatabuilder.ComandoPagoTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,13 +36,13 @@ class ComandoControladorPagoTest {
     @DisplayName("Deberia crear un pago")
     void crearPago() throws Exception{
         // arrange
-        ComandoPago pago = new ComandoPagoTestDataBuilder().build();
+        ComandoPago pago = new ComandoPagoTestDataBuilder().conCliente(new ComandoCliente(1l,"Carlos","CC","1152205388")).build();
         // act - assert
         mocMvc.perform(post("/pagos")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(pago)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 1}"));
+                .andExpect(content().json("{'valor': 2}"));
     }
 
     @Test

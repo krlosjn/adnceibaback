@@ -1,12 +1,11 @@
 package com.ceiba.pago.controlador.repositorio;
 
+import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.pago.modelo.entidad.Pago;
 import com.ceiba.pago.puerto.repositorio.RepositorioPago;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -16,9 +15,6 @@ public class RepositorioPagoMysql implements RepositorioPago {
 
     @SqlStatement(namespace="pagos", value="crear")
     private static String sqlCrear;
-
-    @SqlStatement(namespace="pagos", value="actualizar")
-    private static String sqlActualizar;
 
     @SqlStatement(namespace="pagos", value="eliminar")
     private static String sqlEliminar;
@@ -37,16 +33,14 @@ public class RepositorioPagoMysql implements RepositorioPago {
     public Long crear(Pago pago) {
 
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-
-        parameterSource.addValue("id",pago.getId());
         parameterSource.addValue("referencia_pago",pago.getReferenciaPago());
         parameterSource.addValue("id_cliente",pago.getCliente().getId());
         parameterSource.addValue("descuento",pago.isAplicaDescuento());
-        parameterSource.addValue("valor_base",pago.getFechaRegistro());
+        parameterSource.addValue("valor_base",pago.getValorBase());
+        parameterSource.addValue("valor_total",pago.getValorTotal());
         parameterSource.addValue("fecha_registro",pago.getFechaRegistro());
         parameterSource.addValue("fecha_proximo_pago",pago.getFechaProximoPago());
-
-        KeyHolder keyHolder = new GeneratedKeyHolder();
+        System.err.println(parameterSource.getValues());
         return this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);
     }
 
@@ -64,11 +58,6 @@ public class RepositorioPagoMysql implements RepositorioPago {
         paramSource.addValue("referencia_pago", referenciaPago);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
-    }
-
-    @Override
-    public void actualizar(Pago usuario) {
-        this.customNamedParameterJdbcTemplate.actualizar(usuario, sqlActualizar);
     }
 
     @Override

@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ComandoCliente {
-    private Long id;
+    //private Long id;
     private String nombre;
     private String tipoIdentificacion;
     private String numeroIdentificacion;

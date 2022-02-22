@@ -52,9 +52,6 @@ class PagoTest {
         assertEquals(fechaProximoPagoEsperada,fechaProximoPago);
     }
 
-    // método de ayuda para setear una fecha actual
-
-    /*
     @Test
     void validaFechaIncorrectaPagoDomingo(){
         //arrange
@@ -78,8 +75,6 @@ class PagoTest {
         }, ExcepcionDiaNoValido.class,"No se puede pagar este día");
 
     }
-    */
-
 
     @Test
     void deberiaFallarSinReferenciaPago(){

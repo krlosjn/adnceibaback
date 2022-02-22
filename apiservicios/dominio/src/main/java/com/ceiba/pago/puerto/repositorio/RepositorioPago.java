@@ -18,12 +18,6 @@ public interface RepositorioPago {
     Long crear(Pago pago);
 
     /**
-     * Permite actualizar un pago que se encuentre en el sistema
-     * @param usuario
-     */
-    void actualizar(Pago usuario);
-
-    /**
      * Permite eliminar un pago
      * @param id
      */

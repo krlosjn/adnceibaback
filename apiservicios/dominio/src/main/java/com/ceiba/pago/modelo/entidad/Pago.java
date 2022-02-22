@@ -30,7 +30,7 @@ public class Pago {
     public static final String REFERENCIA_PAGO_VALIDA_DIGITOS = "La referencia de pago debe tener 4 dígitos";
     public static final String VALOR_BASE = "El valor debe estar entre 100000 y 1000000";
 
-    private Long id;
+   // private Long id;
     private String referenciaPago;
     private Cliente cliente;
     private boolean aplicaDescuento;
@@ -39,15 +39,15 @@ public class Pago {
     private LocalDate fechaRegistro;
     private LocalDate fechaProximoPago;
 
-    public Pago(Long id, String referenciaPago, Cliente cliente, boolean aplicaDescuento, double valorBase, LocalDate fechaRegistro) {
+    public Pago( String referenciaPago, Cliente cliente, boolean aplicaDescuento, double valorBase, LocalDate fechaRegistro) {
         validandoArgumentos(referenciaPago, valorBase, fechaRegistro);
-        this.id = id;
+        //this.id = id;
         this.referenciaPago =referenciaPago;
         this.cliente=cliente;
         this.aplicaDescuento=aplicaDescuento;
         this.valorBase=valorBase;
         this.fechaRegistro = fechaRegistro;
-       // validaDiaPagoNoFinSemana(fechaRegistro);
+        validaDiaPagoNoFinSemana(fechaRegistro);
         generarFechaProximoPago(fechaRegistro,NUMERO_DIAS_PROXIMO_PAGO);
         generaDescuento(valorBase);
     }
@@ -108,7 +108,6 @@ public class Pago {
     @Override
     public String toString() {
         return "Pago{" +
-                "id=" + id +
                 ", referenciaPago='" + referenciaPago + '\'' +
                 ", aplicaDescuento=" + aplicaDescuento +
                 ", valorBase=" + valorBase +

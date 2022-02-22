@@ -15,9 +15,6 @@ public class RepositorioClienteMysql implements RepositorioCliente {
     @SqlStatement(namespace="clientes", value="crear")
     private static String sqlCrear;
 
-    @SqlStatement(namespace="clientes", value="actualizar")
-    private static String sqlActualizar;
-
     @SqlStatement(namespace="clientes", value="eliminar")
     private static String sqlEliminar;
 
@@ -51,10 +48,6 @@ public class RepositorioClienteMysql implements RepositorioCliente {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
     }
 
-    @Override
-    public void actualizar(Cliente usuario) {
-        this.customNamedParameterJdbcTemplate.actualizar(usuario, sqlActualizar);
-    }
 
     @Override
     public boolean existePorId(Long id) {

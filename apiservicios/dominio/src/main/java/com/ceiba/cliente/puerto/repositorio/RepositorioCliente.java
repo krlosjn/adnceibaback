@@ -19,12 +19,6 @@ public interface RepositorioCliente {
     Long crear(Cliente pago);
 
     /**
-     * Permite actualizar un pago que se encuentre en el sistema
-     * @param usuario
-     */
-    void actualizar(Cliente usuario);
-
-    /**
      * Permite eliminar un pago
      * @param id
      */
@@ -32,10 +26,10 @@ public interface RepositorioCliente {
 
     /**
      * Permite validar si existe un pago asociado a un usuario
-     * @param referenciaPago
+     * @param  nombre
      * @return si existe o no
      */
-    boolean existe(String referenciaPago);
+    boolean existe(String nombre);
 
     /**
      * Permite validar si existe un pago con un nombre excluyendo un id

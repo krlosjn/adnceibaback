@@ -1,6 +1,6 @@
 package com.ceiba.pago.servicio.testdatabuilder;
 
-import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.pago.comando.ComandoPago;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ public class ComandoPagoTestDataBuilder {
     public static final double PORCENTAJE_DESCUENTO = 0.15;
     private Long id;
     private String referenciaPago;
-    private Cliente cliente;
+    private ComandoCliente cliente;
     private boolean aplicaDescuento;
     private double valorBase;
     private double valorTotal;
@@ -20,7 +20,7 @@ public class ComandoPagoTestDataBuilder {
     public ComandoPagoTestDataBuilder() {
         this.id=2L;
         this.referenciaPago="1111";
-        this.cliente= new Cliente(1l,"Carlos","CC","1152205388");
+        this.cliente= null;
         this.aplicaDescuento=true;
         this.valorBase=200000;
         this.fechaRegistro = LocalDate.now();
@@ -40,6 +40,11 @@ public class ComandoPagoTestDataBuilder {
 
     public ComandoPagoTestDataBuilder conAplicaConValorBase(double valorBase) {
         this.valorBase = valorBase;
+        return this;
+    }
+
+    public ComandoPagoTestDataBuilder conCliente(ComandoCliente comandoCliente){
+        this.cliente=comandoCliente;
         return this;
     }
 

@@ -1,6 +1,6 @@
 select
  id,
- referencia_pago ,
+ referencia_pago,
  id_cliente,
  descuento ,
  valor_base ,
