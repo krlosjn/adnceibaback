@@ -16,18 +16,18 @@ public class Cliente {
 
 
     @Setter
-    //private Long id;
+    private Long id;
     private String nombre;
     private String tipoIdentificacion;
     private String numeroIdentificacion;
 
-    public Cliente( String nombre, String tipoIdentificacion, String numeroIdentificacion){
+    public Cliente( Long id,String nombre, String tipoIdentificacion, String numeroIdentificacion){
         validarObligatorio(nombre, EL_NOMBRE_NO_PUEDE_SER_UN_CAMPO_VACIO);
         validarLongitudMaxima(nombre,30,NOMBRE_MAXIMO);
         validarObligatorio(tipoIdentificacion, TIENE_QUE_INGRESAR_TIPO_DE_DOCUMENTO);
         validarLongitudMaxima(numeroIdentificacion,10, NUMERO_IDENTIFICACION_MAYOR);
         validarLongitudMinima(numeroIdentificacion,10, NUMERO_IDENTIFICACION_MENOR);
-        //this.id=id;
+        this.id=id;
         this.nombre=nombre;
         this.tipoIdentificacion=tipoIdentificacion;
         this.numeroIdentificacion=numeroIdentificacion;
@@ -56,7 +56,7 @@ public class Cliente {
 
 
     public static void main(String[] args) {
-        Cliente cliente = new Cliente( "Carlos","CC","1152205388");
+        Cliente cliente = new Cliente( 1L,"Carlos","CC","1152205388");
 
         System.err.println(cliente.toString());
     }

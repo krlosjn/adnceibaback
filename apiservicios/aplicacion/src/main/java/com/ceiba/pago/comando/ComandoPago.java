@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ComandoPago {
-    //private Long id;
+    private Long id;
     private String referenciaPago;
     private ComandoCliente cliente;
     private boolean aplicaDescuento;

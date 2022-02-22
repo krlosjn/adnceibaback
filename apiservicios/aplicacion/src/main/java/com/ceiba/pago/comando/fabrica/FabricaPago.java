@@ -17,7 +17,7 @@ public class FabricaPago {
 
     public Pago crear(ComandoPago comandoPago) {
         return new Pago(
-                //comandoPago.getId(),
+                comandoPago.getId(),
                 comandoPago.getReferenciaPago(),
                 fabricaCliente.crear(comandoPago.getCliente()),
                 comandoPago.isAplicaDescuento(),
