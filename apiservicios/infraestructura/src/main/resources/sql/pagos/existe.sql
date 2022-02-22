@@ -1,1 +1,1 @@
-select count(1) from pagos where referencia_pago= :referenciaPago
+select count(1) from pagos where id = :id

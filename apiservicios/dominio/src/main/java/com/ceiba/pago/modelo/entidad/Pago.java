@@ -105,15 +105,4 @@ public class Pago {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Pago{" +
-                ", referenciaPago='" + referenciaPago + '\'' +
-                ", aplicaDescuento=" + aplicaDescuento +
-                ", valorBase=" + valorBase +
-                ", valorTotal=" + valorTotal +
-                ", fechaRegistro=" + fechaRegistro +
-                ", fechaProximoPago=" + fechaProximoPago +
-                '}';
-    }
 }

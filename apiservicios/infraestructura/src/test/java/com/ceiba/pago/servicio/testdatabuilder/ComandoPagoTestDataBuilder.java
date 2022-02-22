@@ -18,7 +18,6 @@ public class ComandoPagoTestDataBuilder {
     private LocalDate fechaProximoPago;;
 
     public ComandoPagoTestDataBuilder() {
-        this.id=2L;
         this.referenciaPago="1111";
         this.cliente= null;
         this.aplicaDescuento=true;

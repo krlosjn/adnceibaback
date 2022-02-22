@@ -26,7 +26,7 @@ pipeline{
                     gitTool: 'Default' ,
                     submoduleCfg: [],
                     userRemoteConfigs: [[credentialsId: '0ee40853-b086-421b-a1cc-4387f2598986',
-                        url: 'https://github.com/carlos-junco/proyectoadnservices.git']]])
+                        url: 'https://github.com/krlosjn/adnceibaback.git']]])
                 }
         }
         stage('Compilacion y Test Unitarios'){

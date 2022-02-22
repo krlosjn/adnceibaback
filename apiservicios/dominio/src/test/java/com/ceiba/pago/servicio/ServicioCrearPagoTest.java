@@ -30,7 +30,7 @@ class ServicioCrearPagoTest {
         // arrange
         Pago pago = new PagoTestDataBuilder().build();
         RepositorioPago repositorioPago = Mockito.mock(RepositorioPago.class);
-        Mockito.when(repositorioPago.existe(Mockito.anyString())).thenReturn(false);
+        Mockito.when(repositorioPago.existe(Mockito.anyLong())).thenReturn(false);
         Mockito.when(repositorioPago.crear(pago)).thenReturn(1L);
         ServicioCrearPago servicioCrearPago = new ServicioCrearPago(repositorioPago);
         // act

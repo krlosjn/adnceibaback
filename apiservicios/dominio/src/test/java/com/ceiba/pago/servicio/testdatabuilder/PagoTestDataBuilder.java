@@ -104,10 +104,4 @@ public class PagoTestDataBuilder {
         }
         return fechaRegistro;
     }
-
-    // eliminar esté método
-    public static void main(String[] args) {
-        Pago pago= new PagoTestDataBuilder().build();
-        System.out.println(pago.toString());
-    }
 }

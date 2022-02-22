@@ -54,12 +54,4 @@ public class Cliente {
         return false;
     }
 
-
-    public static void main(String[] args) {
-        Cliente cliente = new Cliente( 1L,"Carlos","CC","1152205388");
-
-        System.err.println(cliente.toString());
-    }
-
-
 }

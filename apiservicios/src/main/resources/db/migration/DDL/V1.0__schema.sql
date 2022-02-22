@@ -1,5 +1,5 @@
 create table clientes(
-id int  auto_increment primary key,
+id int  auto_increment primary key not null,
 nombre varchar(30) not null,
 tipo_identificacion varchar(20) not null,
 numero_identificacion varchar(10) not null
@@ -7,7 +7,7 @@ numero_identificacion varchar(10) not null
 
 
 create table pagos (
- id int  auto_increment primary key,
+ id int  auto_increment primary key not null,
  referencia_pago varchar(4) not null,
  id_cliente  int not null ,
  descuento varchar(5) not null,

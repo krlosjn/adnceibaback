@@ -10,11 +10,11 @@ public class ComandoClienteTestDataBuilder {
     private String numeroIdentificacion;
 
     public ComandoClienteTestDataBuilder(){
-        this.id=2L;
         this.nombre="Carlos";
         this.tipoIdentificacion="CC";
         this.numeroIdentificacion="1152205388";
     }
+
 
     public ComandoClienteTestDataBuilder conId(Long id){
         this.id=id;

@@ -23,4 +23,17 @@ public class ComandoPago {
     private LocalDate fechaRegistro;
     private LocalDate fechaProximoPago;
 
+    @Override
+    public String toString() {
+        return "ComandoPago{" +
+                "id=" + id +
+                ", referenciaPago='" + referenciaPago + '\'' +
+                ", cliente=" + cliente +
+                ", aplicaDescuento=" + aplicaDescuento +
+                ", valorBase=" + valorBase +
+                ", valorTotal=" + valorTotal +
+                ", fechaRegistro=" + fechaRegistro +
+                ", fechaProximoPago=" + fechaProximoPago +
+                '}';
+    }
 }
