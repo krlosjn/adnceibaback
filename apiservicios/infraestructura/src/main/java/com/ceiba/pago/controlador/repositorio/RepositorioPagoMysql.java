@@ -9,6 +9,8 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import java.util.Objects;
+
 @Repository
 public class RepositorioPagoMysql implements RepositorioPago {
 
@@ -48,7 +50,7 @@ public class RepositorioPagoMysql implements RepositorioPago {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .update(sql,parameterSource,keyHolder,new String[] {"id"});
 
-        return  keyHolder.getKey().longValue();
+        return  Objects.requireNonNull(keyHolder.getKey()).longValue();
 
 
     }
