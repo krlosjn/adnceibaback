@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:8383")
 @RestController
 @RequestMapping("/clientes")
 @Api(tags = { "Controlador comando cliente"})
@@ -23,6 +24,7 @@ public class ComandoControladorCliente {
         this.manejadorCrearCliente = manejadorCrearCliente;
 		this.manejadorEliminarCliente = manejadorEliminarCliente;
     }
+
 
     @PostMapping
     @ApiOperation("Crear cliente")
