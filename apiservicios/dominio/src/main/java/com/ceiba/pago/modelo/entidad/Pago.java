@@ -32,14 +32,14 @@ public class Pago {
 
     private Long id;
     private String referenciaPago;
-    private Cliente cliente;
+    private Long cliente;
     private boolean aplicaDescuento;
     private double valorBase;
     private double valorTotal;
     private LocalDate fechaRegistro;
     private LocalDate fechaProximoPago;
 
-    public Pago( Long id,String referenciaPago, Cliente cliente, boolean aplicaDescuento, double valorBase, LocalDate fechaRegistro) {
+    public Pago( Long id,String referenciaPago, Long cliente, boolean aplicaDescuento, double valorBase, LocalDate fechaRegistro) {
         validandoArgumentos(referenciaPago, valorBase, fechaRegistro);
         this.id = id;
         this.referenciaPago =referenciaPago;
@@ -94,11 +94,7 @@ public class Pago {
            throw new ExcepcionValorInvalido(mensaje);
        }
     }
-    /**
-     * validaMontoPagar
-     * método que valida que el pago sea mayor o igual de 6 dígitos 100.000 y menor a 8 1.000.000
-     * @paramas valorBase, mensaje
-     * **/
+
     public void validaMontoPagar(double valorBase,String mensaje){
         if(valorBase<100000 || valorBase>1000000){
             throw  new ExcepcionValorInvalido(mensaje);

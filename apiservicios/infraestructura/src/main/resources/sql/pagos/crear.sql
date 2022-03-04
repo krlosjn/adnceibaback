@@ -8,7 +8,7 @@ fecha_registro,
 fecha_proximo_pago)
 values (
 :referenciaPago,
-:idCliente,
+:cliente,
 :aplicaDescuento,
 :valorBase,
 :valorTotal,

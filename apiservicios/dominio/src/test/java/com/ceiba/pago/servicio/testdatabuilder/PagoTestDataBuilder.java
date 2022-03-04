@@ -17,7 +17,7 @@ public class PagoTestDataBuilder {
 
     private Long  id;
     private String referenciaPago;
-    private Cliente cliente;
+    private Long cliente;
     private boolean aplicaDescuento;
     private double valorBase;
     private double valorTotal;
@@ -27,7 +27,7 @@ public class PagoTestDataBuilder {
     public PagoTestDataBuilder() {
         this.id=1L;
         this.referenciaPago ="0000";
-        this.cliente=new Cliente(1l,"Carlos","CC","1152205388");
+        this.cliente=1L;
         this.fechaRegistro= LocalDate.now();
         this.aplicaDescuento=true;
         this.valorBase=1000000;
@@ -41,7 +41,7 @@ public class PagoTestDataBuilder {
         return this;
     }
 
-    public PagoTestDataBuilder conCliente(Cliente cliente){
+    public PagoTestDataBuilder conCliente(Long cliente){
         this.cliente=cliente;
         return this;
     }

@@ -10,7 +10,7 @@ public class ComandoPagoTestDataBuilder {
     public static final double PORCENTAJE_DESCUENTO = 0.15;
     private Long id;
     private String referenciaPago;
-    private ComandoCliente cliente;
+    private Long cliente;
     private boolean aplicaDescuento;
     private double valorBase;
     private double valorTotal;
@@ -19,7 +19,7 @@ public class ComandoPagoTestDataBuilder {
 
     public ComandoPagoTestDataBuilder() {
         this.referenciaPago="1111";
-        this.cliente= null;
+        this.cliente= 1L;
         this.aplicaDescuento=true;
         this.valorBase=200000;
         this.fechaRegistro = LocalDate.now();
@@ -42,7 +42,7 @@ public class ComandoPagoTestDataBuilder {
         return this;
     }
 
-    public ComandoPagoTestDataBuilder conCliente(ComandoCliente comandoCliente){
+    public ComandoPagoTestDataBuilder conCliente(Long comandoCliente){
         this.cliente=comandoCliente;
         return this;
     }

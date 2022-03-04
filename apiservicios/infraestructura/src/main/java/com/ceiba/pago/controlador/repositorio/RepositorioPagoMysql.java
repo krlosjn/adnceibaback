@@ -34,12 +34,11 @@ public class RepositorioPagoMysql implements RepositorioPago {
 
     @Override
     public Long crear(Pago pago) {
-
         String sql  = sqlCrear;
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-
+        parameterSource.addValue("id",pago.getId());
         parameterSource.addValue("referenciaPago",pago.getReferenciaPago());
-        parameterSource.addValue("idCliente",pago.getCliente().getId());
+        parameterSource.addValue("cliente",pago.getCliente());
         parameterSource.addValue("aplicaDescuento",pago.isAplicaDescuento());
         parameterSource.addValue("valorBase",pago.getValorBase());
         parameterSource.addValue("valorTotal",pago.getValorTotal());
@@ -49,10 +48,7 @@ public class RepositorioPagoMysql implements RepositorioPago {
         KeyHolder keyHolder= new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .update(sql,parameterSource,keyHolder,new String[] {"id"});
-
         return  Objects.requireNonNull(keyHolder.getKey()).longValue();
-
-
     }
 
     @Override

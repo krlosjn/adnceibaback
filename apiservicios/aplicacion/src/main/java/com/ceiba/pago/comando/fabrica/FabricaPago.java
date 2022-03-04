@@ -9,17 +9,11 @@ import com.ceiba.pago.comando.ComandoPago;
 @Component
 public class FabricaPago {
 
-    FabricaCliente fabricaCliente;
-
-    public FabricaPago(FabricaCliente fabricaCliente){
-        this.fabricaCliente=fabricaCliente;
-    }
-
     public Pago crear(ComandoPago comandoPago) {
         return new Pago(
                 comandoPago.getId(),
                 comandoPago.getReferenciaPago(),
-                fabricaCliente.crear(comandoPago.getCliente()),
+                comandoPago.getCliente(),
                 comandoPago.isAplicaDescuento(),
                 comandoPago.getValorBase(),
                 comandoPago.getFechaRegistro()

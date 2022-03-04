@@ -15,24 +15,11 @@ import java.time.LocalDate;
 public class ComandoPago {
     private Long id;
     private String referenciaPago;
-    private ComandoCliente cliente;
+    private Long cliente;
     private boolean aplicaDescuento;
     private double valorBase;
     private double valorTotal;
     private LocalDate fechaRegistro;
     private LocalDate fechaProximoPago;
 
-    @Override
-    public String toString() {
-        return "ComandoPago{" +
-                "id=" + id +
-                ", referenciaPago='" + referenciaPago + '\'' +
-                ", cliente=" + cliente +
-                ", aplicaDescuento=" + aplicaDescuento +
-                ", valorBase=" + valorBase +
-                ", valorTotal=" + valorTotal +
-                ", fechaRegistro=" + fechaRegistro +
-                ", fechaProximoPago=" + fechaProximoPago +
-                '}';
-    }
 }

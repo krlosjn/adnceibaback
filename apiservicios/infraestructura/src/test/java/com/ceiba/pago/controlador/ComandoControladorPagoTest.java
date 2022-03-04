@@ -38,8 +38,7 @@ class ComandoControladorPagoTest {
         // arrange
         ComandoPago pago =
                 new ComandoPagoTestDataBuilder().conReferenciaPago("1111")
-                        .conCliente(new ComandoClienteTestDataBuilder()
-                                .conId(1L).build()).build();
+                        .build();
         System.err.println("final object " + pago.toString());
         // act - assert
         mocMvc.perform(post("/pagos")
