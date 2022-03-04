@@ -1,6 +1,5 @@
 package com.ceiba.pago.comando.fabrica;
 
-import com.ceiba.cliente.comando.fabrica.FabricaCliente;
 import com.ceiba.pago.modelo.entidad.Pago;
 import org.springframework.stereotype.Component;
 

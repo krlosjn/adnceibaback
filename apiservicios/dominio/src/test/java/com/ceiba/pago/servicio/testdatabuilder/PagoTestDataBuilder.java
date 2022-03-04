@@ -1,14 +1,11 @@
 package com.ceiba.pago.servicio.testdatabuilder;
 
-import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.pago.modelo.entidad.Pago;
 import com.ceiba.pago.servicio.excepcionesservicio.ExcepcionDiaNoValido;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-/**
- * Clase encargada de crear un objeto de prueba
- * **/
+
 public class PagoTestDataBuilder {
 
     private static final int DIAS_PROXIMO_PAGO=20;

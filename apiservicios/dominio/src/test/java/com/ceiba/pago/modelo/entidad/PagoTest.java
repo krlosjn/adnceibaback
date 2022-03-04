@@ -39,7 +39,6 @@ class PagoTest {
     }
 
 
-    /**Toca validar bien este método por que toma un día quemado**/
     @Test
     void validaFechaProximoPago(){
         //arrange

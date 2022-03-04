@@ -10,19 +10,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * Carlos Junco
- * Clase que se encarga de probar la creación de un cliente nuevo
- * **/
 public class ClienteTest {
 
-    /**
-     * método que se se encarga de crear un nombre de prueba
-     * **/
 
     @Test
     public void deberiaCrearUsuarioNuevo(){
-    //arrange
+        //arrange
         Cliente clienteUno = new ClienteTestDataBuilder().conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
         Cliente clienteDos= new ClienteTestDataBuilder().conNombre("Carlos").conTipoIdentificacion("CC").conNumeroIdentificacion("1152205388").build();
         //act-assert

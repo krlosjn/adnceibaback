@@ -4,6 +4,5 @@ public class ExcepcionDiaNoValido extends RuntimeException {
 
     public ExcepcionDiaNoValido(String mensaje){
         super(mensaje);
-
     }
 }

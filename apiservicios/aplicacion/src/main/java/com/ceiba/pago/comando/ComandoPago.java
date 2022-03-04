@@ -1,6 +1,5 @@
 package com.ceiba.pago.comando;
 
-import com.ceiba.cliente.comando.ComandoCliente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
